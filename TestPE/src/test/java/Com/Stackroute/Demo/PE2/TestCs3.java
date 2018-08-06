@@ -32,4 +32,4 @@ import org.junit.Test;
 
         assertNull(null, ob.getMemVar(null, 0, 0));
     }
-}
+	}
