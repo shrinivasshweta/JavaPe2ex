@@ -1,29 +1,38 @@
 package Com.Stackroute.Demo.PE2;
-
- class Member {
-		String s; 
-		int i; 
-		double d;}
-	
- 
-public class Member_Variable{
-	public String getVal(String res) {
-		System.out.println(res);
-				return res;
-	}
-	public static void main() {
-		
-			Member m = new Member();
-				 m.s = "Shweta";
-				 m.i=22;
-				 m.d=6000.00;
-				 String s1=m.s+" "+m.i+" "+m.d;
-				 Member_Variable m1 = new Member_Variable();
-				 m1.getVal(s1);
-	}
-	
+ public class MemberVariable{
+		 
+		    public Object [] getMemVar(String name, int age, double sal) {
+		        if(name == null || age == 0)
+		            return null;
+		        Member ob = new Member(name, age, sal);
+		        Object [] arr = {ob.getName(), ob.getAge(), ob.getSalary()};
+		        return arr;
+		    }
 		}
-		
+
+		class Member{
+		    private String name;
+		    private String age;
+		    private String Salary;
+		    
+		    public Member(String name, int age, double Salary) {
+		        this.name = name;
+		        this.age = Integer.toString(age);
+		        this.Salary = Double.toString(Salary);
+		    }
+		    
+		    String getName() {
+		        return this.name;
+		    }
+		    
+		    int getAge() {
+		        return Integer.parseInt(this.age);
+		    }
+		    
+		    double getSalary() {
+		        return Double.parseDouble(this.Salary);
+		    }
+		}
 		
 
 
